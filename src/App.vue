@@ -11,7 +11,7 @@
 import EmpView from './views/tlias/EmpView.vue';
 // import ElementView from "./views/element/ElementView.vue";
 export default {
-  components: {EmpView/* ElementView */},
+  components: {EmpView  /* ElementView */},
   data() {
     return {
       message: "hello vue",
