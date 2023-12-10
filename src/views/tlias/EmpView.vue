@@ -44,7 +44,6 @@
               <el-button type="primary" @click="onSubmit">查询</el-button>
             </el-form-item>
           </el-form>
-
           <!-- 表格 -->
           <el-table :data="tabledata" border>
             <el-table-column
@@ -82,7 +81,7 @@
               <el-button type="danger" size="mini">删除</el-button>
             </el-table-column>
           </el-table>
-          <br>
+          <br />
           <!-- 分页条 -->
           <el-pagination
             background
@@ -112,9 +111,12 @@ export default {
     };
   },
   methods: {
-    mounted () {
-      axios.get("")
-      
+    mounted() {
+      axios
+        .get("http://yapi.smart-xwork.cn/mock/169327/emp/list")
+        .then((result) => {
+          result.data.data = this.tabledata;
+        });
     },
     handleSizeChange: function (val) {
       alert("每页记录数变化" + val);
